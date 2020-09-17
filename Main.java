@@ -8,7 +8,6 @@ class Main {
         while(true) {
             //Variable Declaration
             Scanner scan = new Scanner(System.in);
-            String no = "n";
             String yes = "y";
             String ssConst = "ss";
             String agsConst = "ags";
@@ -20,7 +19,9 @@ class Main {
             boolean isGlove = false;
             boolean isTyrant = false;
             boolean isGhostShip = false;
-
+            boolean validInput = false;
+            boolean quit = false;
+            
             //Get Item Level for Starforce Value Check
             System.out.println("Please enter the Item's Level: ");
             int itemLevel = scan.nextInt();
@@ -28,57 +29,123 @@ class Main {
 
             //Check if the item is a Glove
             System.out.println("Is this item a Glove? Please enter y/n: ");
-            String yesOrNo = scan.nextLine();
-            if (yesOrNo.equals(yes)) {
-            isGlove = true;
+            while (!quit) {
+                String yesOrNo = scan.nextLine().trim().toLowerCase();
+                switch(yesOrNo){
+                    case "y":
+                        quit = true;
+                        break;
+                    case "n":
+                        quit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid Input Detected! Please enter y/n: ");
+                        validInput = false;
+                        quit = false;
+                        break;
+                }
+                if (yesOrNo.equals(yes)) {
+                    isGlove = true;
+                }
             }
+            quit = false;
 
             if (itemLevel == 150) {
                 //Check if the item is a Tyrant
                 System.out.println("Is this item a Tyrant? Please enter y/n: ");
-                yesOrNo = scan.nextLine();
-                if (yesOrNo.equals(yes)) {
-                    isTyrant = true;
+                while (!quit) {
+                    String yesOrNo = scan.nextLine().trim().toLowerCase();
+                    switch(yesOrNo){
+                        case "y":
+                            quit = true;
+                            break;
+                        case "n":
+                            quit = true;
+                            break;
+                        default:
+                            System.out.println("Invalid Input Detected! Please enter y/n: ");
+                            validInput = false;
+                            quit = false;
+                            break;
+                    }
+                    if (yesOrNo.equals(yes)) {
+                        isTyrant = true;
+                    }
                 }
+                quit = false;
 
                 if (!isTyrant) {
                     //Check if the item is a Ghost Ship Badge
                     System.out.println("Is this item a Ghost Ship Badge? Please enter y/n: ");
-                    yesOrNo = scan.nextLine();
-                    if (yesOrNo.equals(yes)) {
-                        isGhostShip = true;
+                    while (!quit) {
+                        String yesOrNo = scan.nextLine().trim().toLowerCase();
+                        switch(yesOrNo){
+                            case "y":
+                                quit = true;
+                                break;
+                            case "n":
+                                quit = true;
+                                break;
+                            default:
+                                System.out.println("Invalid Input Detected! Please enter y/n: ");
+                                validInput = false;
+                                quit = false;
+                                break;
+                        }
+                        if (yesOrNo.equals(yes)) {
+                            isGhostShip = true;
+                        }
                     }
                 }
+                quit = false;
             }
                    
             //Get Type of Scroll Used
             if (!isGhostShip) {
                 System.out.println("How is your item scrolled? Please enter ags, ss, or prime.");
-                scrollType = scan.nextLine().trim().toLowerCase();
-
+                while (!quit) {
+                    scrollType = scan.nextLine().trim().toLowerCase();
+                    switch(scrollType){
+                        case "ags":
+                            quit = true;
+                            break;
+                        case "ss":
+                            quit = true;
+                            break;
+                        case "prime":
+                            quit = true;
+                            break;
+                        default:
+                            System.out.println("Invalid Input Detected! Please enter ags, ss or prime: ");
+                            validInput = false;
+                            quit = false;
+                            break;
+                    }
+                }
+                
                 //Calculate added stats from scrolls
                 if (scrollType.equals(agsConst)) {
-                scrollStatValue = 3;
-                scrollAttValue = 4;
+                    scrollStatValue = 3;
+                    scrollAttValue = 4;
                 }
 
                 else if (scrollType.equals(ssConst) && isGlove == true) { 
-                scrollStatValue = 0;
-                scrollAttValue = 4;
+                    scrollStatValue = 0;
+                    scrollAttValue = 4;
                 }
 
                 else if (isGhostShip) {
-                scrollStatValue = 0;
-                scrollAttValue = 0;
+                    scrollStatValue = 0;
+                    scrollAttValue = 0;
                 }
 
                 else if (scrollType.equals(primeConst)) {
-                scrollStatValue = 10;
+                    scrollStatValue = 10;
                 }
 
                 else {
-                scrollStatValue = 9;
-                scrollAttValue = 0;
+                    scrollStatValue = 9;
+                    scrollAttValue = 0;
                 }
             }
 
@@ -307,100 +374,32 @@ class Main {
             if (isGlove == true)
             addedAttValue = addedAttValue-7;
 
-            int oneSlotScenario = totalScrollCount-1;
-            int twoSlotScenario = totalScrollCount-2;
-            int threeSlotScenario = totalScrollCount-3;
-            int fourSlotScenario = totalScrollCount-4;
-            int fiveSlotScenario = totalScrollCount-5;
-            int sixSlotScenario = totalScrollCount-6;
-            int sevenSlotScenario = totalScrollCount-7;
-            int eightSlotScenario = totalScrollCount-8;
-            int nineSlotScenario = totalScrollCount-9;
-            int tenSlotScenario = totalScrollCount;
-            
-            int oneSlotStat = addedStatValue - (oneSlotScenario*scrollStatValue);
-            int oneSlotAtt = addedAttValue - (oneSlotScenario*scrollAttValue);
-
-            int twoSlotStat = addedStatValue - (twoSlotScenario*scrollStatValue);
-            int twoSlotAtt = addedAttValue - (twoSlotScenario*scrollAttValue);
-
-            int threeSlotStat = addedStatValue - (threeSlotScenario*scrollStatValue);
-            int threeSlotAtt = addedAttValue - (threeSlotScenario*scrollAttValue);
-
-            int fourSlotStat = addedStatValue - (fourSlotScenario*scrollStatValue);
-            int fourSlotAtt = addedAttValue - (fourSlotScenario*scrollAttValue);
-
-            int fiveSlotStat = addedStatValue - (fiveSlotScenario*scrollStatValue);
-            int fiveSlotAtt = addedAttValue - (fiveSlotScenario*scrollAttValue);
-
-            int sixSlotStat = addedStatValue - (sixSlotScenario*scrollStatValue);
-            int sixSlotAtt = addedAttValue - (sixSlotScenario*scrollAttValue);
-
-            int sevenSlotStat = addedStatValue - (sevenSlotScenario*scrollStatValue);
-            int sevenSlotAtt = addedAttValue - (sevenSlotScenario*scrollAttValue);
-
-            int eightSlotStat = addedStatValue - (eightSlotScenario*scrollStatValue);
-            int eightSlotAtt = addedAttValue - (eightSlotScenario*scrollAttValue);
-
-            int nineSlotStat = addedStatValue - (nineSlotScenario*scrollStatValue);
-            int nineSlotAtt = addedAttValue - (nineSlotScenario*scrollAttValue);
-            
-            int tenSlotStat = addedStatValue - (tenSlotScenario*scrollStatValue);
-            int tenSlotAtt = addedAttValue - (tenSlotScenario*scrollAttValue);
-
             System.out.println("\nCalculating MCS..");
-
             System.out.println("Minimum MCS Combination found: ");
+
             if (isGhostShip) {
                 System.out.println(totalScrollCount + " Slot MCS Found: STAT: " + addedStatValue + ", WA: +" + addedAttValue);
             }
 
             if (!isGhostShip) {
-                if (oneSlotStat <= 9 && oneSlotAtt <= 9) {
-                    System.out.println("1 Slot MCS Found: STAT: " + oneSlotStat + ", WA: +" + oneSlotAtt);
-                    mcsFound = true;
-                }
-                if (twoSlotStat <= 18 && twoSlotAtt <= 18 && !mcsFound) {
-                    System.out.println("2 Slot MCS Found: STAT: " + twoSlotStat + ", WA: +" + twoSlotAtt);
-                    mcsFound = true;
-                }
-                if (threeSlotStat <= 27 && threeSlotAtt <= 27 && !mcsFound) {
-                    System.out.println("3 Slot MCS Found: STAT: " + threeSlotStat + ", WA: +" + threeSlotAtt);
-                    mcsFound = true;
-                }
-                if (fourSlotStat <= 36 && fourSlotAtt <= 36 && !mcsFound) {
-                    System.out.println("4 Slot MCS Found! STAT: " + fourSlotStat + ", WA: +" + fourSlotAtt);        
-                    mcsFound = true;
-                }
-                if (fiveSlotStat <= 45 && fiveSlotAtt <= 45 && !mcsFound) {
-                    System.out.println("5 Slot MCS Found: STAT: " + fiveSlotStat + ", WA: +" + fiveSlotAtt);
-                    mcsFound = true;
-                }
-                if (sixSlotStat <= 54 && sixSlotAtt <= 54 && !mcsFound) {
-                    System.out.println("6 Slot MCS Found: STAT: " + sixSlotStat + ", WA: +" + sixSlotAtt);
-                    mcsFound = true;
-                }
-                if (sevenSlotStat <= 63 && sevenSlotAtt <= 63 && !mcsFound) {
-                    System.out.println("7 Slot MCS Found: STAT: " + sevenSlotStat + ", WA: +" + sevenSlotAtt);
-                    mcsFound = true;
-                }
-                if (eightSlotStat <= 72 && eightSlotAtt <= 72 && !mcsFound) {
-                    System.out.println("8 Slot MCS Found: STAT: " + eightSlotStat + ", WA: +" + eightSlotAtt);
-                    mcsFound = true;
-                }
-                if (nineSlotStat <= 81 && nineSlotAtt <= 81 && !mcsFound) {
-                    System.out.println("9 Slot MCS Found: STAT: " + nineSlotStat + ", WA: +" + nineSlotAtt);
-                    mcsFound = true;
-                }
-                if (tenSlotStat <= 90 && tenSlotAtt <= 90 && !mcsFound) {
-                    System.out.println("10 Slot MCS Found: STAT: " + tenSlotStat + ", WA: +" + tenSlotAtt);
-                    mcsFound = true;
+                int testSlotScenario = totalScrollCount;
+
+                for (int i = 1; i <= 90; i++) {
+                    testSlotScenario--;
+                    int testSlotStat = addedStatValue - (testSlotScenario*scrollStatValue);
+                    int testSlotAtt = addedAttValue - (testSlotScenario*scrollAttValue);
+                    if (testSlotStat <= (9*i) && testSlotAtt <= (9*i)) {
+                        System.out.println(i + " Slot MCS Found: STAT: " + testSlotStat + ", WA: +" + testSlotAtt);
+                        mcsFound = true;
+                    }
+                    if (mcsFound) {
+                        break;
+                    }
                 }
             }
-
-            System.out.println("\nThanks for using the MCS Calculator! Hope you found it useful.\n\n");
+            System.out.println("\nThanks for using Halcyon's MCS Calculator!\n");
+            System.out.println("\n------------------------------------------\n");
             System.out.println("Want to check another item's MCS?");
-
         }
     }
 }

@@ -47,7 +47,6 @@ class Main {
       boolean isGlove = false;
       boolean isTyrant = false;
       boolean isGhostShip = false;
-      boolean validInput = false;
       boolean quit = false;
 
       // Get Item Level for Starforce Value Check
@@ -88,7 +87,6 @@ class Main {
             break;
           default:
             System.out.println("Invalid Input Detected! Please enter ags, ss or prime: ");
-            validInput = false;
             quit = false;
             break;
           }
@@ -246,7 +244,7 @@ class Main {
           int testSlotAtt = addedAttValue - (testSlotScenario * scrollAttValue);
           if (testSlotStat <= (9 * i) && testSlotAtt <= (9 * i)) {
             System.out.println(i + " Slot MCS Found: STAT: " + testSlotStat + ", WA: +" + testSlotAtt);
-            return;
+            break;
           }
 
         }

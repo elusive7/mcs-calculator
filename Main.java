@@ -398,7 +398,7 @@ class Main {
                 }
             }
             System.out.println("\nThanks for using Halcyon's MCS Calculator!\n");
-            System.out.println("\n------------------------------------------\n");
+            System.out.println("------------------------------------------\n");
             System.out.println("Want to check another item's MCS?");
         }
     }

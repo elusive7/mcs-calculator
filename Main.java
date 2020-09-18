@@ -50,7 +50,7 @@ class Main {
         75 };
     Integer[] sfSolidAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50 };
     // Welcome dialog
-    System.out.println("Welcome to Prestige's AriesMS MCS Calculator (Beta)\n");
+    System.out.println("\nWelcome to Prestige's AriesMS MCS Calculator (Beta)\n");
 
     while (true) {
       // Variable Declaration

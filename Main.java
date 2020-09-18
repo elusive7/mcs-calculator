@@ -50,7 +50,7 @@ class Main {
         75 };
     Integer[] sfSolidAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50 };
     // Welcome dialog
-    System.out.println("Welcome to Halcyon's MCS Calculator\n");
+    System.out.println("Welcome to Prestige's MCS Calculator\n");
 
     while (true) {
       // Variable Declaration
@@ -186,7 +186,7 @@ class Main {
 
         }
       }
-      System.out.println("\nThanks for using Halcyon's MCS Calculator!\n");
+      System.out.println("\nThanks for using Prestige's MCS Calculator!\n");
       System.out.println("------------------------------------------\n");
       System.out.println("Want to check another item's MCS?");
     }

@@ -23,7 +23,7 @@ class Main {
       case "prime":
         return scrollType;
       default:
-        System.out.println("Invalid Input Detected! Please enter ags,ss or prime: ");
+        System.out.println("Invalid Input Detected! Please enter ags, ss or prime: ");
         break;
       }
     }
@@ -50,7 +50,7 @@ class Main {
         75 };
     Integer[] sfSolidAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50 };
     // Welcome dialog
-    System.out.println("Welcome to Prestige's MCS Calculator\n");
+    System.out.println("Welcome to Prestige's AriesMS MCS Calculator (Beta)\n");
 
     while (true) {
       // Variable Declaration
@@ -83,7 +83,7 @@ class Main {
 
       // Get Type of Scroll Used
       if (!isGhostShip) {
-        System.out.println("How is this item scrolled? Please enter ags,ss,or prime.");
+        System.out.println("How is this item scrolled? Please enter ags, ss, or prime.");
         // Calculate added stats from scrolls
         switch (getScrollType(scan)) {
         case "ags":
@@ -107,7 +107,7 @@ class Main {
       }
 
       // Get Total # of Scrolls used
-      System.out.println("Please enter the number of Scrolls used on the item: ");
+      System.out.println("Please enter the total number of Scrolls used on the item: ");
       int totalScrollCount = scan.nextInt();
 
       // Get Current Starforce Value
@@ -116,12 +116,12 @@ class Main {
 
       // Get Total Added Stat
       System.out.println(
-          "Please enter the amount of added desired STAT that you would like to check e.g. if this item has LUK: (10+30),enter 30,not 40: ");
+          "Please enter the amount of added desired STAT that you would like to check e.g. if this item has LUK: (10+30), enter 30, not 40: ");
       int addedStatValue = scan.nextInt();
 
       // Get Total Added ATT
       System.out.println(
-          "Please enter the amount of added desired ATT that you would like to check e.g. if this item has ATT: (10+55),enter 55,not 65: ");
+          "Please enter the amount of added desired ATT that you would like to check e.g. if this item has ATT: (10+55), enter 55, not 65: ");
       int addedAttValue = scan.nextInt();
 
       // Get Pre-StarForce Values on clean item
@@ -160,18 +160,18 @@ class Main {
         addedAttValue -= sfArcaneAtt[currentStars];
       }
 
-      // In AriesMS,Gloves gain 7 ATT when SF'd from 1-15,
+      // In AriesMS, Gloves gain 7 ATT when SF'd from 1-15,
       // gaining att at 1,3,5,7,11,13. 
       if (isGlove == true) {
         int extraGloveAtt = (Math.min(currentStars, 13) + 1) / 2;
         addedAttValue = addedAttValue - extraGloveAtt;
       }
 
-      System.out.println("\nCalculating MCS..");
+      System.out.println("\nCalculating MCS...");
       System.out.println("Minimum MCS Combination found: ");
 
       if (isGhostShip) {
-        System.out.println(totalScrollCount + " Slot MCS Found: STAT: " + addedStatValue + ",WA: +" + addedAttValue);
+        System.out.println(totalScrollCount + " Slot MCS Found: STAT: " + addedStatValue + ", WA: " + addedAttValue);
       } else {
         int testSlotScenario = totalScrollCount;
 
@@ -180,7 +180,7 @@ class Main {
           int testSlotStat = addedStatValue - (testSlotScenario * scrollStatValue);
           int testSlotAtt = addedAttValue - (testSlotScenario * scrollAttValue);
           if (testSlotStat <= (9 * i) && testSlotAtt <= (9 * i)) {
-            System.out.println(i + " Slot MCS Found: STAT: " + testSlotStat + ",WA: +" + testSlotAtt);
+            System.out.println(i + " Slot MCS Found: STAT: " + testSlotStat + ", WA: " + testSlotAtt);
             break;
           }
 

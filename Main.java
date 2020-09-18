@@ -36,7 +36,7 @@ class Main {
     Integer[] sfArcaneStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 70, 85, 100,
         115, 130 };
     Integer[] sfArcaneAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 29, 45, 62, 80, 99 };
-    Integer[] sfSweetWaterStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 53, 66, 79, 92,
+    Integer[] sfSweetWaterStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 53, 66, 79, 92,
         105, 118 };
     Integer[] sfSweetWaterAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 23, 36, 50, 65,
         81 };

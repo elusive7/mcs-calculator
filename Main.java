@@ -32,14 +32,14 @@ class Main {
   public static void main(String[] args) {
     // sf stat table
     Integer[] sfTyrantStat = new Integer[] { 0, 18, 38, 60, 84, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110 };
-    Integer[] sfTyrantAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50, 63, 77, 92, 108, 125 };
+    Integer[] sfTyrantAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50, 63, 77, 92, 108, 125, 143 };
     Integer[] sfArcaneStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 70, 85, 100,
-        115, 130 };
-    Integer[] sfArcaneAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 29, 45, 62, 80, 99 };
+        115, 130, 146 };
+    Integer[] sfArcaneAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 29, 45, 62, 80, 99, 119 };
     Integer[] sfSweetWaterStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 53, 66, 79, 92,
         105, 118 };
     Integer[] sfSweetWaterAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 23, 36, 50, 65,
-        81 };
+        81, 99 };
     Integer[] sfSuperiorStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 51, 62, 73,
         84, 95, 106 };
     Integer[] sfSuperiorAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 21, 33, 46, 60, 75 };
@@ -50,7 +50,7 @@ class Main {
         75 };
     Integer[] sfSolidAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 27, 38, 50 };
     // Welcome dialog
-    System.out.println("\nWelcome to Prestige's AriesMS MCS Calculator (Beta)\n");
+    System.out.println("\nWelcome to Divine's AriesMS MCS Calculator! Flames are not supported yet.\n");
 
     while (true) {
       // Variable Declaration
@@ -186,7 +186,7 @@ class Main {
 
         }
       }
-      System.out.println("\nThanks for using Prestige's MCS Calculator!\n");
+      System.out.println("\nThanks for using Divine's MCS Calculator!\n");
       System.out.println("------------------------------------------\n");
       System.out.println("Want to check another item's MCS?");
     }

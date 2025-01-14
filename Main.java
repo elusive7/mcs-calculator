@@ -39,7 +39,7 @@ class Main {
     Integer[] sfSweetWaterStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 53, 66, 79, 92,
         105, 118 };
     Integer[] sfSweetWaterAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 23, 36, 50, 65,
-        81, 99 };
+        81, 99, 117 };
     Integer[] sfSuperiorStat = new Integer[] { 0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 51, 62, 73,
         84, 95, 106 };
     Integer[] sfSuperiorAtt = new Integer[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 21, 33, 46, 60, 75 };

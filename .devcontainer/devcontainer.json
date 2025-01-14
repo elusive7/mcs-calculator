@@ -1,0 +1,9 @@
+{
+    "name": "Java Codespace",
+    "image": "mcr.microsoft.com/devcontainers/java:11",
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "postCreateCommand": "javac src/Main.java"
+  }
+  
